@@ -103,7 +103,7 @@ class MainMenuState extends MusicBeatState
 				if (FlxG.keys.justPressed.THREE) {
 					persistentUpdate = false;
 					persistentDraw = true;
-					openSubState(new Overworld());
+					switchState(new Overworld());
 				}
 				/*
 				if (FlxG.keys.justPressed.SEVEN)
