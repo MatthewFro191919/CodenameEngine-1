@@ -288,20 +288,17 @@ class FlxInputText extends FlxText
 		drawSprite(fieldBorderSprite);
 		drawSprite(backgroundSprite);
 		
-		for (camera in getCamerasLegacy())
-		{
-			if (!camera.visible || !camera.exists || !isOnScreen(camera))
-				continue;
+		if (!camera.visible || !camera.exists || !isOnScreen(camera))
+			continue;
 			
-			if (isSimpleRender(camera))
-				drawSimple(camera);
-			else
-				drawComplex(camera);
+		if (isSimpleRender(camera))
+			drawSimple(camera);
+		else
+			drawComplex(camera);
 			
-			#if FLX_DEBUG
-			FlxBasic.visibleCount++;
-			#end
-		}
+		#if FLX_DEBUG
+		FlxBasic.visibleCount++;
+		#end
 		
 		// In case caretColor was changed
 		if (caretColor != caret.color || caret.height != size + 2)
